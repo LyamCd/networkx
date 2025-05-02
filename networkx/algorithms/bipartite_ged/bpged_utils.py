@@ -47,13 +47,13 @@ def compute_bipartite_cost_matrix(
     * The upper right submatrix of size $n * n$ represents the assignment
       costs of real nodes from `g1` with the empty nodes from `g2`. It
       corresponds to the deletion edit operation. For $i < n$ and
-      $m \leqslant j < n + m$, $C_{i, j}$ represents the deletion cost of
+      $m \\leqslant j < n + m$, $C_{i, j}$ represents the deletion cost of
       node $i$ from `g1`. Note that every cost outside the diagonal of
       the submatrix is infinite. It means a node can only be deleted once.
 
     * The lower left submatrix of size $m * m$ represents the assignment
       costs of empty nodes from `g1` with real nodes from `g2`. It corresponds
-      to the insertion edit operation. For $n \leqslant i < n + m$ and
+      to the insertion edit operation. For $n \\leqslant i < n + m$ and
       $j < m$, $C_{i, j}$ represents the insertion cost of node $j$ in `g2`.
       Note that like the deletion submatrix, every value outside the
       submatrix's diagonal is infinite as we can't insert the same node twice.
