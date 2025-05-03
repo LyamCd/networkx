@@ -5,8 +5,7 @@ Utility functions for the algorithm :
 * A function to convert the index mapping into a node mapping
 """
 
-from collections.abc import Iterable
-from typing import Any
+from collections.abc import Sequence
 
 import numpy as np
 
@@ -142,7 +141,10 @@ def compute_bipartite_cost_matrix(
 
 
 def convert_mapping(
-    rho: Iterable[int], varrho: Iterable[int], g1: nx.Graph, g2: nx.Graph
+    rho: Sequence[int] | np.ndarray,
+    varrho: Sequence[int] | np.ndarray,
+    g1: nx.Graph,
+    g2: nx.Graph,
 ) -> tuple:
     """Converts a node indices assignment to a
     node mapping using the networkx nodes IDs.
@@ -164,7 +166,7 @@ def convert_mapping(
 
     Parameters
     ----------
-    rho, varrho: Iterable of ints
+    rho, varrho: Sequence or array of ints
         Lists of indices representing the results of nodes matching.
 
         For each node of index `i` in `g1`, `rho[i]`
