@@ -116,6 +116,9 @@ def set_warnings():
     warnings.filterwarnings(
         "ignore", category=DeprecationWarning, message="Keyword argument 'link'"
     )
+    warnings.filterwarnings(
+        "ignore", category=DeprecationWarning, message="maybe_regular_expander"
+    )
 
 
 @pytest.fixture(autouse=True)
@@ -209,6 +212,7 @@ needs_scipy = [
     "algorithms/bipartite_ged/solvers.py",
     "algorithms/bipartite_ged/bpged_utils.py",
     "algorithms/bipartite_ged/bipartite_ged.py",
+    "algorithms/bipartite/link_analysis.py",
     "algorithms/centrality/current_flow_betweenness.py",
     "algorithms/centrality/current_flow_betweenness_subset.py",
     "algorithms/centrality/eigenvector.py",
